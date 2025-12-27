@@ -1,0 +1,214 @@
+@import "./colors.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  min-height: 0;
+}
+
+window#waybar {
+  background: alpha(@background, 0.5);
+  border-bottom: 1px solid alpha(@surface0, 0.67);
+}
+
+window#waybar > box {
+  padding: 10px 10px 10px 10px;
+}
+
+#custom-cachy:hover,
+#cpu:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#pulseaudio.microphone:hover,
+#pulseaudio.sink-muted:hover,
+#custom-powermenu:hover {
+  opacity: 0.5;
+}
+
+#custom-cachy,
+#cpu,
+#clock,
+#mpris,
+#custom-menu,
+#tray,
+#privacy,
+#network,
+#bluetooth,
+#pulseaudio,
+#pulseaudio.microphone,
+#backlight,
+#battery,
+#power-profiles-daemon,
+#custom-caffeine,
+#custom-powermenu {
+  color: @foreground;
+  font-size: 16px;
+  margin: 0px 10px;
+}
+
+#custom-cachy {
+  font-size: 16px;
+  color: @color2;
+}
+
+#custom-menu {
+}
+
+.modules-left {
+  background-color: transparent;
+  border-radius: 50px;
+}
+
+#workspaces {
+  padding: 5px 5px;
+  border-radius: 50px;
+  color: @text;
+}
+
+#workspaces button {
+  margin: 0px 5px;
+  padding: 0;
+  border-radius: 50px;
+  color: transparent;
+  background-color: @surface0;
+  color: @surface0;
+  transition: all 0.3s ease-in-out;
+  font-size: 0px;
+}
+
+#workspaces button.active {
+  background-color: @color4;
+  color: @color4;
+  min-width: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+  background-color: @color0;
+  color: @color7;
+  border-radius: 16px;
+  background-size: 400% 400%;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @mantle;
+  border-radius: 16px;
+  min-width: 50px;
+  background-size: 400% 400%;
+  transition: all 0.3s ease-in-out;
+}
+
+#privacy {
+  color: @color3;
+}
+
+#clock {
+  color: @color4;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#clock:hover {
+  color: alpha(@color4, 0.6);
+}
+
+#mpris {
+  color: @color3;
+}
+
+#network.disabled {
+  color: @color1;
+}
+#network.wifi {
+  color: @color2;
+}
+#network.ethernet {
+  color: @color3;
+}
+
+#bluetooth.disabled {
+  color: @color1;
+}
+#bluetooth.connected {
+  color: @color4;
+}
+
+#pulseaudio.sink-muted:not(.microphone) {
+  color: @color3;
+}
+#pulseaudio.microphone.source-muted {
+  color: @color1;
+}
+
+#battery.plugged {
+  color: @color4;
+}
+#battery.charging {
+  color: @color2;
+}
+#battery.warning {
+  color: @color3;
+}
+#battery.critical {
+  color: @color1;
+}
+
+tooltip {
+  background: @background;
+  margin: 10px;
+  border-radius: 10px;
+}
+tooltip * {
+  color: @foreground;
+  margin: 2px;
+  background: @background;
+  border-radius: 10px;
+}
+
+#pulseaudio-slider,
+#backlight-slider {
+  min-height: 80px;
+  border-radius: 10px;
+}
+
+#pulseaudio-slider slider,
+#backlight-slider slider {
+  background: @color4;
+  border-radius: 10px;
+}
+
+#pulseaudio-slider trough,
+#backlight-slider trough {
+  min-width: 8px;
+  border-radius: 10px;
+}
+
+#pulseaudio-slider highlight {
+  background: @color4;
+  border-radius: 10px;
+}
+#backlight-slider highlight {
+  background: @color4;
+  border-radius: 10px;
+}
+
+#power-profiles-daemon.performance {
+  color: @color2;
+}
+
+#power-profiles-daemon.balanced {
+  color: @color4;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @color2;
+}
+
+#custom-caffeine.active {
+  color: @color4;
+}
+
+#custom-caffeine.inactive {
+  color: @color1;
+}

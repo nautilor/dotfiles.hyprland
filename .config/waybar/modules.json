@@ -1,0 +1,240 @@
+{
+  "custom/caffeine": {
+    "exec": "~/.config/waybar/bin/caffeine.sh icon",
+    "format": "{}",
+    "interval": 1,
+    "signal": 1,
+    "return-type": "json",
+    "on-click": "~/.config/waybar/bin/caffeine.sh toggle"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "group/extras": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "extras",
+      "transition-left-to-right": false
+    },
+    "modules": ["custom/menu", "tray"]
+  },
+  "group/brightness": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "brightness",
+      "transition-left-to-right": false
+    },
+    "modules": ["backlight"]
+  },
+  "group/audio": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "audio",
+      "transition-left-to-right": false
+    },
+    "modules": ["pulseaudio"]
+  },
+  "custom/cachy": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "rofi -show drun -theme application"
+  },
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "󰄯",
+      "active": "󰄯"
+    },
+    "persistent-workspaces": {
+      "*": [1, 2, 3]
+    }
+  },
+  "cpu": {
+    "format": "{icon}",
+    "format-icons": [
+      "<span size='14pt'>⠁</span>",
+      "<span size='14pt'>⠉</span>",
+      "<span size='14pt'>⠙</span>",
+      "<span size='14pt'>⠛</span>",
+      "<span size='14pt'>⠟</span>",
+      "<span size='14pt'>⠿</span>"
+    ],
+    "interval": 1,
+    "tooltip": true,
+    "tooltip-format": "CPU Frequency: {avg_frequency} GHz",
+    "on-click": "alacritty -e btm"
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%a %d %b %H:%M}",
+    "on-click": "~/.config/waybar/bin/calendar.sh",
+    "tooltip": false,
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span color='#F38BA8'>{}</span>",
+        "days": "<span color='#CDD6F4'>{}</span>",
+        "weekdays": "<span color='#A6E3A1'>{}</span>",
+        "today": "<span color='#F9E2AF'><b>{}</b></span>"
+      }
+    }
+  },
+  "mpris": {
+    "format": "<span size='14pt'>󰐎</span>",
+    "interval": 1,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "tooltip": true,
+    "tooltip-format": "{title}"
+  },
+  "custom/menu": {
+    "format": "<span size='10pt'></span>",
+    "tooltip": false
+  },
+  "tray": {
+    "spacing": 16,
+    "reverse-direction": true,
+    "icon-size": 16,
+    "show-passive-items": false
+  },
+  "privacy": {
+    "icon-size": 14,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": false
+      }
+    ],
+    "ignore": [
+      {
+        "type": "screenshare",
+        "name": "obs"
+      }
+    ]
+  },
+  "network": {
+    "format-icons": {
+      "wifi": [
+        "<span size='12pt'>󰤯</span>",
+        "<span size='12pt'>󰤟</span>",
+        "<span size='12pt'>󰤢</span>",
+        "<span size='12pt'>󰤥</span>",
+        "<span size='12pt'>󰤨</span>"
+      ],
+      "ethernet": "<span size='12pt'>󰈀</span>",
+      "disabled": "<span size='12pt'>󰤭</span>",
+      "disconnected": "<span size='12pt'>󰤩</span>"
+    },
+    "format-wifi": "{icon}",
+    "format-ethernet": "{icon}",
+    "format-disconnected": "{icon}",
+    "format-disabled": "{icon}",
+    "interval": 5,
+    "tooltip-format": "{essid}\t{gwaddr}",
+    "on-click": "rfkill toggle wifi",
+    "on-click-right": "nm-connection-editor",
+    "tooltip": true,
+    "max-length": 20
+  },
+  "bluetooth": {
+    "interval": 5,
+    "format-on": "<span size='14pt'>󰂯</span>",
+    "format-off": "<span size='14pt'>󰂲</span>",
+    "format-disabled": "<span size='14pt'>󰂲</span>",
+    "format-connected": "<span size='14pt'>󰂱</span>",
+    "tooltip": true,
+    "tooltip-format": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_address} | Battery: {device_battery_percentage}%",
+    "on-click": "rfkill toggle bluetooth",
+    "on-click-right": "blueman-manager"
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "<span size='14pt'>󰍬</span>",
+    "format-source-muted": "<span size='14pt'>󰍭</span>",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "tooltip": false
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical"
+  },
+  "pulseaudio": {
+    "interval": 1,
+    "format": "{icon}",
+    "format-icons": [
+      "<span size='14pt'>󰕿</span>",
+      "<span size='14pt'>󰖀</span>",
+      "<span size='14pt'>󰕾</span>"
+    ],
+    "format-muted": "<span size='14pt'>󰝟</span>",
+    "on-click-right": "pavucontrol",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "reverse-scrolling": true,
+    "tooltip": true,
+    "tooltip-format": "Volume: {volume}%\n{desc}",
+    "ignored-sinks": ["Easy Effects Sink"]
+  },
+  "backlight/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical",
+    "device": "intel_backlight"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}",
+    "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
+    "reverse-scrolling": true,
+    "smooth-scrolling-threshold": 0.2,
+    "tooltip": false
+  },
+  "battery": {
+    "interval": 5,
+    "states": {
+      "warning": 30,
+      "critical": 10
+    },
+    "format": "{icon}",
+    "format-icons": [
+      "<span size='14pt'>󰁺</span>",
+      "<span size='14pt'>󰁻</span>",
+      "<span size='14pt'>󰁼</span>",
+      "<span size='14pt'>󰁽</span>",
+      "<span size='14pt'>󰁾</span>",
+      "<span size='14pt'>󰁿</span>",
+      "<span size='14pt'>󰂀</span>",
+      "<span size='14pt'>󰂁</span>",
+      "<span size='14pt'>󰂂</span>",
+      "<span size='14pt'>󰁹</span>"
+    ],
+    "format-charging": "<span size='14pt'>󰂄</span>",
+    "format-plugged": "<span size='14pt'>󰚥</span>",
+    "format-critical": "<span size='14pt'>󰂃</span>",
+    "tooltip": true,
+    "tooltip-format": "Charge: {capacity}%",
+    "tooltip-format-charging": "Charging: {capacity}%"
+  },
+  "custom/powermenu": {
+    "format": "<span size='13pt'>󰐥</span>",
+    "on-click": "$HOME/.config/rofi/powermenu/powermenu.sh",
+    "tooltip": false
+  }
+}

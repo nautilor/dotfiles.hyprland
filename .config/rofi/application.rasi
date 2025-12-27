@@ -1,0 +1,131 @@
+@import "catppuccin-mocha"
+
+// Config //
+configuration {
+    modi:                        "drun,filebrowser,window,run";
+    show-icons:                  true;
+    display-drun:                " ";
+    display-run:                 " ";
+    display-filebrowser:         " ";
+    display-window:              " ";
+    drun-display-format:         "{name}";
+    window-format:               "{w}{t}";
+    font:                        "JetBrainsMono Nerd Font 12";
+    icon-theme:                  "Tela-circle-dracula";
+}
+
+
+// Main //
+window {
+    height:                      20em;
+    width:                       38.5em;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border-color:                @mantle;
+    background-color:            transparent;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0.8em;
+    orientation:                 horizontal;
+    children:                    [ "inputbar" , "listbox" ];
+    background-color:            #00000003;
+}
+
+
+// Inputs //
+inputbar {
+    enabled:                     true;
+    width:                       19em;
+    spacing:                     0em;
+    padding:                     0em;
+    children:                    [ "entry" ];
+    expand:                      false;
+    background-color:            @base;
+    background-image:            url("~/.config/rofi/assets/background.png", width);
+    border-radius:               1em 0em 0em 1em;
+}
+entry {
+    enabled:                     false;
+}
+
+
+// Lists //
+listbox {
+    spacing:                     0em;
+    padding:                     0em;
+    children:                    [ "dummy" , "listview" , "dummy" ];
+    background-color:            @mantle-50;
+    border-radius:               0em 1em 1em 0em;
+}
+listview {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     1em 2em 1em 2em;
+    columns:                     1;
+    lines:                       5;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    expand:                      false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @text;
+}
+dummy {
+    background-color:            transparent;
+}
+
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     1em;
+    padding:                     0.5em 0.5em 0.5em 1.5em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @text;
+    border-radius:               16px;
+}
+element selected.normal {
+    background-color:            @mantle;
+    text-color:                  @text;
+}
+element-icon {
+    size:                        2.2em;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+// Error message //
+error-message {
+    text-color:                  @text;
+    background-color:            @base;
+    text-transform:              capitalize;
+    children:                    [ "textbox" ];
+}
+
+textbox {
+    text-color:                  inherit;
+    background-color:            inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}

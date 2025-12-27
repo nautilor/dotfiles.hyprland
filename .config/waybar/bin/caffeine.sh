@@ -1,0 +1,1 @@
+/home/edoardo/.config/hypr/bin/caffeine.sh
