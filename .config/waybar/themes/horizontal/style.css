@@ -7,11 +7,11 @@
 
 window#waybar {
   background: alpha(@background, 0.5);
-  border-right: 1px solid alpha(@surface0, 0.67);
+  border-bottom: 1px solid alpha(@surface0, 0.67);
 }
 
 window#waybar > box {
-  padding: 10px 0px;
+  padding: 10px 10px 10px 10px;
 }
 
 #custom-cachy:hover,
@@ -43,7 +43,7 @@ window#waybar > box {
 #custom-powermenu {
   color: @foreground;
   font-size: 16px;
-  margin: 5px 0px;
+  margin: 0px 10px;
 }
 
 #custom-cachy {
@@ -60,14 +60,14 @@ window#waybar > box {
 }
 
 #workspaces {
-  padding: 10px 5px;
+  padding: 5px 5px;
   border-radius: 50px;
   color: @text;
 }
 
 #workspaces button {
-  margin: 5px 10px;
-  padding: 8px 0px;
+  margin: 0px 5px;
+  padding: 0;
   border-radius: 50px;
   color: transparent;
   background-color: @surface0;
@@ -79,7 +79,7 @@ window#waybar > box {
 #workspaces button.active {
   background-color: @color4;
   color: @color4;
-  min-height: 20px;
+  min-width: 40px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -87,7 +87,6 @@ window#waybar > box {
   background-color: @color0;
   color: @color7;
   border-radius: 16px;
-  min-height: 40px;
   background-size: 400% 400%;
 }
 
@@ -95,6 +94,7 @@ window#waybar > box {
   background-color: @red;
   color: @mantle;
   border-radius: 16px;
+  min-width: 50px;
   background-size: 400% 400%;
   transition: all 0.3s ease-in-out;
 }

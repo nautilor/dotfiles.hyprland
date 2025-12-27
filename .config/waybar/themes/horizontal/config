@@ -2,7 +2,7 @@
   "reload_style_on_change": true,
 	"toggle": true,
   "layer": "top",
-  "position": "left",
+  "position": "top",
   "margin-top": 0,
   "margin-bottom": 0,
   "margin-left": 0,
