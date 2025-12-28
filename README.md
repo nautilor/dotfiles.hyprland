@@ -32,3 +32,5 @@
 - [hyprsunset](https://github.com/hyprwm/hyprsunset)
 - [nm-applet](https://gitlab.gnome.org/GNOME/network-manager-applet)
 - [poolkit-gnome](https://gitlab.gnome.org/Archive/policykit-gnome)
+- [nemo](https://github.com/linuxmint/nemo)
+- [nemo-fileroller](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-fileroller)
