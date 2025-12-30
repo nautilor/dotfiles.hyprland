@@ -14,6 +14,7 @@ enable_focus_mode() {
 	hyprctl keyword decoration:rounding 0
 	hyprctl keyword decoration:shadow:enabled false
 	hyprctl keyword decoration:dim_inactive true
+	hyprctl keyword animations:enabled false
 	update_wallpaper
 	swaync-client -dn
 }
